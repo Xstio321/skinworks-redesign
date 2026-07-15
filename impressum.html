@@ -60,6 +60,14 @@
     padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s;
   }
   nav a:hover,nav a:focus-visible{border-color:var(--teal)}
+  .nav-toggle{
+    display:none;
+    width:40px;height:40px;
+    align-items:center;justify-content:center;
+    background:transparent;border:1.5px solid var(--teal);border-radius:8px;
+    color:var(--teal-dk);font-size:20px;line-height:1;cursor:pointer;flex-shrink:0;
+  }
+  .main-nav{display:flex;align-items:center;gap:34px}
   .btn{
     display:inline-block;text-decoration:none;font-weight:600;font-size:15.5px;
     padding:13px 26px;border-radius:999px;transition:transform .12s ease,background .15s;
@@ -113,7 +121,19 @@
   .foot a:hover{color:var(--teal-dk);text-decoration:underline}
 
   @media (max-width:980px){
-    nav ul{display:none}
+    .nav-toggle{display:flex}
+    .main-nav{
+      display:none;
+      position:absolute;top:72px;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      padding:8px 28px 28px;
+    }
+    .main-nav.open{display:flex}
+    nav ul{flex-direction:column;gap:0}
+    nav ul li{border-bottom:1px dashed var(--line)}
+    nav ul li a{display:block;padding:14px 2px}
+    .main-nav .btn{margin-top:18px;align-self:flex-start}
   }
 </style>
 </head>
@@ -125,15 +145,16 @@
       <b>SkinWorks-Akademie</b>
       <span>Praxis für Piercing · Tätowierungen</span>
     </a>
-    <nav aria-label="Hauptnavigation">
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" aria-label="Hauptnavigation">
       <ul>
         <li><a href="piercing.html">Piercing</a></li>
         <li><a href="taetowierungen.html">Tätowierungen</a></li>
         <li><a href="schlupfwarzen.html">Schlupfwarzenkorrektur</a></li>
         <li><a href="index.html#kontakt">Kontakt</a></li>
       </ul>
+      <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
     </nav>
-    <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
   </div>
 </header>
 
@@ -213,5 +234,16 @@
   </div>
 </footer>
 
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+    });
+  }
+</script>
 </body>
 </html>
