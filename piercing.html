@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis für Piercing — SkinWorks-Akademie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #10312F;
+    --teal:     #00747A;
+    --teal-dk:  #045459;
+    --paper:    #F6F3EC;
+    --sage:     #E4EAE3;
+    --brass:    #A97E3C;
+    --line:     rgba(16,49,47,.16);
+    --line-soft:rgba(16,49,47,.09);
+    --radius:   4px;
+    --max:      1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Wix Madefor Text',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--teal);color:var(--paper)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;color:var(--ink)}
+  .brand b{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-weight:700;font-size:20px;letter-spacing:.01em;color:var(--teal-dk);
+  }
+  .brand span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);opacity:.65;margin-top:2px;
+  }
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav a{
+    text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;
+    padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s;
+  }
+  nav a:hover,nav a:focus-visible{border-color:var(--teal)}
+  nav a.current{border-color:var(--teal)}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:15.5px;
+    padding:13px 26px;border-radius:999px;transition:transform .12s ease,background .15s;
+    border:1.5px solid var(--teal);
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-solid{background:var(--teal);color:#fff}
+  .btn-solid:hover{background:var(--teal-dk);border-color:var(--teal-dk)}
+  .btn-ghost{color:var(--teal-dk);background:transparent}
+  .btn-ghost:hover{background:rgba(0,116,122,.08)}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;border-radius:3px}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:72px 0 88px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--teal-dk);display:flex;align-items:center;gap:12px;margin-bottom:26px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--brass);display:inline-block}
+  h1{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-size:clamp(38px,4.8vw,58px);
+    font-weight:700;line-height:1.05;letter-spacing:-.015em;
+    margin-bottom:26px;
+  }
+  .hero p.lede{font-size:19px;max-width:56ch;color:rgba(16,49,47,.82);margin-bottom:18px}
+  .hero p.sub{font-size:16px;max-width:58ch;color:rgba(16,49,47,.72);margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* Info-Block im Hero */
+  .hero-panel{
+    background:rgba(255,255,255,.65);
+    border:1px solid var(--line);
+    border-top:3px solid var(--teal);
+    border-radius:6px;
+    padding:14px 38px;
+  }
+  .hp-block{padding:22px 0;border-bottom:1px dashed var(--line)}
+  .hp-block:last-child{border-bottom:none}
+  .hero-panel .k{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--teal-dk);display:block;margin-bottom:10px;
+  }
+  .hp-hours{
+    display:flex;justify-content:space-between;gap:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:15px;padding:3px 0;
+  }
+  .hero-panel .v{font-size:17px;line-height:1.5}
+  .hero-panel a{color:var(--ink);text-decoration-color:rgba(0,116,122,.4);text-underline-offset:3px}
+
+  /* ---------- Section-Gerüst ---------- */
+  section{padding:88px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+  h2{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-size:clamp(30px,3.4vw,42px);font-weight:700;letter-spacing:-.01em;line-height:1.1;
+  }
+  h3{font-family:'Wix Madefor Display',sans-serif;font-weight:600;letter-spacing:-.01em}
+  .sec-note{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(16,49,47,.55)}
+  .sage{background:var(--sage)}
+
+  /* ---------- Team ---------- */
+  .team-intro{max-width:70ch;color:rgba(16,49,47,.8);margin-bottom:48px;font-size:16.5px}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .member{display:flex;flex-direction:column;gap:16px}
+  .photo{
+    aspect-ratio:4/5;border-radius:var(--radius);
+    width:100%;object-fit:cover;display:block;
+  }
+  .member .name{font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:600}
+  .member .role{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,49,47,.55);margin-bottom:4px}
+  .member .bio{font-size:15px;color:rgba(16,49,47,.78)}
+
+  /* ---------- Preisliste ---------- */
+  .price-group{margin-bottom:56px}
+  .price-group:last-child{margin-bottom:0}
+  .price-group h3{font-size:22px;margin-bottom:22px}
+  .prices-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 72px}
+  .price-row{
+    display:flex;align-items:baseline;gap:10px;
+    padding:13px 0;border-bottom:1px dashed var(--line);
+    font-size:16px;
+  }
+  .price-row .name{flex-shrink:0}
+  .price-row .dots{flex:1;border-bottom:1px dotted rgba(16,49,47,.35);transform:translateY(-4px)}
+  .price-row .val{font-family:'IBM Plex Mono',monospace;font-size:15px;white-space:nowrap}
+  .price-row .val small{color:var(--brass);font-size:12px;margin-right:4px}
+  .prices-note{margin-top:8px;font-size:14.5px;color:rgba(16,49,47,.65);max-width:60ch}
+  .prices-note p{margin-bottom:4px}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{border-top:1px solid var(--line);max-width:840px}
+  .faq-item{border-bottom:1px solid var(--line);padding:24px 2px}
+  .faq-item summary{
+    cursor:pointer;list-style:none;
+    font-family:'Wix Madefor Display',sans-serif;font-size:18.5px;font-weight:600;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{
+    content:"+";font-family:'IBM Plex Mono',monospace;color:var(--teal);font-size:20px;flex-shrink:0;
+  }
+  .faq-item[open] summary::after{content:"–"}
+  .faq-item p{margin-top:16px;font-size:15.5px;color:rgba(16,49,47,.75);max-width:70ch}
+
+  /* ---------- Wünsche (invertiert) ---------- */
+  .wishes{background:var(--teal-dk);color:var(--paper)}
+  .wishes h2{color:#fff}
+  .wishes .sec-note{color:rgba(246,243,236,.6)}
+  .wishes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px 40px}
+  .wish-card{border-top:1.5px solid rgba(246,243,236,.25);padding-top:20px}
+  .wish-card .k{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+    color:var(--brass);filter:brightness(1.5);margin-bottom:12px;display:block;
+  }
+  .wish-card h3{font-size:19px;margin-bottom:10px;color:#fff}
+  .wish-card p{font-size:15px;color:rgba(246,243,236,.82)}
+
+  /* ---------- Kontakt / Öffnungszeiten ---------- */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start}
+  .hours-table{width:100%;border-collapse:collapse}
+  .hours-table td{
+    padding:14px 4px;border-bottom:1px dashed var(--line);
+    font-family:'IBM Plex Mono',monospace;font-size:15px;
+  }
+  .hours-table td:last-child{text-align:right}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:18px;font-size:17px}
+  .contact-list .k{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--teal-dk);display:block;margin-bottom:3px;
+  }
+  .contact-list a{color:var(--ink);text-decoration-color:rgba(0,116,122,.4);text-underline-offset:3px}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:34px 0;background:var(--paper)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot,.foot a{font-size:14px;color:rgba(16,49,47,.65)}
+  .foot a{text-decoration:none;margin-left:22px}
+  .foot a:hover{color:var(--teal-dk);text-decoration:underline}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero-panel{max-width:480px}
+    .team-grid{grid-template-columns:repeat(3,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:44px}
+    .prices-grid{grid-template-columns:1fr;gap:0}
+    nav ul{display:none}
+  }
+  @media (max-width:560px){
+    .team-grid{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .faq-item summary{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <b>SkinWorks-Akademie</b>
+      <span>Praxis für Piercing · Tätowierungen</span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="piercing.html" class="current">Piercing</a></li>
+        <li><a href="taetowierungen.html">Tätowierungen</a></li>
+        <li><a href="schlupfwarzen.html">Schlupfwarzenkorrektur</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Piercing</p>
+      <h1>Praxis für Piercing</h1>
+      <p class="lede">Sicheres und ästhetisches Piercen beginnt bei der richtigen Umgebung. In unserer Piercingpraxis verbinden wir hygienische Standards mit jahrzehntelanger Erfahrung, umfassender Beratung und einem verantwortungsvollen Umgang mit deinem Körper und deiner Persönlichkeit. Ein gutes Piercing braucht mehr als nur Technik – es braucht Fachwissen, Feingefühl und höchste Qualitätsansprüche an Materialien und Nachsorge.</p>
+      <p class="sub">Wir bieten ein breites Spektrum an Körper- und Intimpiercings, inklusive Schlupfwarzenkorrekturen mittels einer speziellen Piercingtechnik. Alle Eingriffe werden von ausgebildeten Fachkräften für Piercing durchgeführt – individuell, ehrlich und professionell. Dabei stehen persönliche Betreuung, anatomische Machbarkeit und Deine gesundheitliche Sicherheit immer an erster Stelle.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
+        <a class="btn btn-outline btn-ghost" href="tel:+492202245577">0 22 02 – 24 55 77</a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Öffnungszeiten und Kontakt">
+      <div class="hp-block">
+        <span class="k">Öffnungszeiten</span>
+        <div class="hp-hours"><span>Montag – Freitag</span><span>12 – 19 Uhr</span></div>
+        <div class="hp-hours"><span>Samstag</span><span>12 – 16 Uhr</span></div>
+      </div>
+      <div class="hp-block">
+        <span class="k">Adresse</span>
+        <div class="v"><a href="https://www.google.com/maps/dir/?api=1&destination=Hauptstra%C3%9Fe%20346a%2C%2051465%20Bergisch%20Gladbach" target="_blank" rel="noopener">Hauptstraße 346a<br>51465 Bergisch Gladbach</a></div>
+      </div>
+      <div class="hp-block">
+        <span class="k">Telefon</span>
+        <div class="v"><a href="tel:+492202245577">0 22 02 – 24 55 77</a></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="sage" id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Das SkinWorks-Akademie Piercing Team</h2>
+      <span class="sec-note">Fachkräfte für Piercing</span>
+    </div>
+    <p class="team-intro reveal">All unserer Fachkräfte für Piercing verfügen über umfangreiches Fachwissen und Erfahrung – von den grundlegendsten bis hin zu den anspruchsvollsten Piercings, sind wir genau der richtige Ansprechpartner für dich. Wir freuen uns darauf, Dir bei allen Fragen rund um dein Piercing helfen zu können.</p>
+    <div class="team-grid reveal">
+      <div class="member">
+        <img class="photo" src="assets/images/team/thomas.jpg" alt="Thomas, Fachkraft für Piercing bei SkinWorks-Akademie">
+        <div>
+          <div class="name">Thomas</div>
+          <div class="role">Fachkraft für Piercing</div>
+          <p class="bio">Hallo, ich bin Thomas und arbeite seit 1996 hauptberuflich als Fachkraft für Piercing. Ich hatte seinerzeit das Privileg von Martina ausgebildet zu werden und bin sehr kreativ wenn es um die Platzierung und den passenden Schmuck für Dein Piercing geht. Bei all Deinen Fragen zu Piercings, Nachsorge und zur Schmuckberatung bin ich gerne für Dich da. Auch bei Schlupfwarzenpiercings bin ich Dein kompetenter Ansprechpartner.</p>
+        </div>
+      </div>
+      <div class="member">
+        <img class="photo" src="assets/images/team/basti.jpg" alt="Basti, Fachkraft für Piercing bei SkinWorks-Akademie">
+        <div>
+          <div class="name">Basti</div>
+          <div class="role">Fachkraft für Piercing</div>
+          <p class="bio">Hey, ich bin Basti. Seit meinem ersten Kontakt mit Piercings hatte ich den Wunsch, Piercer zu werden. Die Kombination aus Handwerk, Präzision und dem Kontakt zu Menschen reizte mich sehr. Im Jahr 2010 bekam ich die Chance meine Ausbildung zu beginnen und lernte fortan das Piercen. Nach meiner erfolgreich abgeschlossenen Ausbildung durfte ich mich Piercer nennen und habe seitdem den Anspruch, meinen Kunden ästhetisch-ansprechende und hygienisch-einwandfreie Piercings zu stechen. Ich freue mich sehr, Euch Piercings und Schmuck in höchster Qualität in unserem Studio einsetzen zu können.</p>
+        </div>
+      </div>
+      <div class="member">
+        <img class="photo" src="assets/images/team/martina.jpg" alt="Martina, Fachkraft für Piercing bei SkinWorks-Akademie">
+        <div>
+          <div class="name">Martina</div>
+          <div class="role">Fachkraft für Piercing</div>
+          <p class="bio">Ich bin Martina Lehnhoff, seit 47 Jahren als Fachkraft für Piercing tätig und auf die Korrektur von Schlupfwarzen mittels Piercing spezialisiert. Ich habe eine spezielle Stichtechnik entwickelt die bei Schlupf- oder Hohlwarzen ästhetisch und funktional perfekte Ergebnisse erzielt. Dein Termin findet nach einer umfassenden Voruntersuchung in ruhiger Atmosphäre, mit viel Einfühlungsvermögen und höchstem hygienischen Standard statt. Du wirst von mir umfassend beraten, wir besprechen alle Deine Fragen und finden gemeinsam die beste Lösung für Dich. Mein Ziel ist es ein ästhetisch schönes Ergebnis zu erzielen und Dein Wohlbefinden und Selbstbewusstsein zu stärken. Ich freue mich darauf, Dich kennenzulernen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREISE ============ -->
+<section id="preise">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Preise</h2>
+      <span class="sec-note">Komplette Preisliste · inkl. Titanschmuck</span>
+    </div>
+
+    <div class="price-group reveal">
+      <h3>Piercings</h3>
+      <div class="prices-grid">
+        <div>
+          <div class="price-row"><span class="name">Ohrloch/Lobe</span><span class="dots"></span><span class="val"><small>ab</small>35€</span></div>
+          <div class="price-row"><span class="name">2x Ohrloch/Lobe</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">Ohrknorpel Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Industrial Piercing</span><span class="dots"></span><span class="val"><small>ab</small>110€</span></div>
+          <div class="price-row"><span class="name">Nostril Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Septum Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">Bauchnabel Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Brustwarzen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">2x Brustwarzen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>130€</span></div>
+          <div class="price-row"><span class="name">Surface Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+        </div>
+        <div>
+          <div class="price-row"><span class="name">Dermal Anchor</span><span class="dots"></span><span class="val"><small>ab</small>69€</span></div>
+          <div class="price-row"><span class="name">Ashley Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">Bridge Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">Augenbrauen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Lippen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Madonna Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Medusa Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Lippenbändchen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>65€</span></div>
+          <div class="price-row"><span class="name">Vertical Labret Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+          <div class="price-row"><span class="name">Zungen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>70€</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-group reveal">
+      <h3>Intim Piercings</h3>
+      <div class="prices-grid">
+        <div>
+          <div class="price-row"><span class="name">Frenum Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Guiche Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Hafada Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Oetang Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Prinz Albert Piercing</span><span class="dots"></span><span class="val"><small>ab</small>130€</span></div>
+        </div>
+        <div>
+          <div class="price-row"><span class="name">Pubic Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Christina Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Schamlippen Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Fourchette Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+          <div class="price-row"><span class="name">Klitoris Vorhaut Piercing</span><span class="dots"></span><span class="val"><small>ab</small>90€</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-group reveal">
+      <h3>Schlupfwarzenkorrektur</h3>
+      <div class="prices-grid">
+        <div>
+          <div class="price-row"><span class="name">Schlupfwarzen Piercing 1x</span><span class="dots"></span><span class="val"><small>ab</small>109€</span></div>
+        </div>
+        <div>
+          <div class="price-row"><span class="name">Schlupfwarzen Piercing 2x</span><span class="dots"></span><span class="val"><small>ab</small>199€</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prices-note reveal">
+      <p>Alle Piercings inklusive hochwertigem Titanschmuck.</p>
+      <p>Schmucksteine oder Materialfarben werden extra berechnet</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sage" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>FAQ</h2>
+      <span class="sec-note">Häufige Fragen</span>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Brauche ich einen Termin?</summary>
+        <p>Wir freuen uns über jeden Kunden, egal ob Walk-In oder Termin. Allerdings werden feste Termine immer bevorzugt. Falls Du also ohne Termin zu uns kommst, kann es zu Wartezeiten kommen, oder wir müssen dir einen Termin für einen anderen Tag anbieten. Für Nachsorgen kannst Du nach wie vor ohne Termin vorbeikommen.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie alt muss ich sein um mich bei Euch Piercen zu lassen?</summary>
+        <p>Piercings bekommst Du bei uns grundsätzlich ab 14 Jahren. Bei Minderjährigen unter 16 Jahren benötigen wir die Einwilligung aller Erziehungsberechtigten oder Vormundspersonen, wovon mindestens einer der beiden vor Ort sein muss. Dazu müssen wir uns ein Ausweisdokument von Dir und die aller Erziehungsberechtigten oder Vormundspersonen ansehen und dokumentieren. Bei Minderjährigen ab 16 Jahren, benötigen wir nur noch die Einwilligung eines Erziehungsberechtigten oder Vormundes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Brauche ich einen Ausweis um mich Piercen zu lassen?</summary>
+        <p>Ja, auf jeden Fall. Wir benötigen von Dir ein Amtliches Dokument mit Lichtbild. Das beinhaltet Personalausweis, Reisepass, Führerschein oder den Elektronischen Aufenthaltstitel. Schülerausweise oder Krankenkassenkarten dürfen wir leider nicht Akzeptieren.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Darf ich eine Begleitperson mitbringen?</summary>
+        <p>Ja, eine Person darf bei uns zum Händchen halten mit in die Kabine. Bei Minderjährigen ist das immer ein Erziehungsberichtigter oder Vormund. Solltest Du aufgrund einer Einschränkung oder Behinderung auf Hilfe angewiesen sein, darfst Du natürlich so viele Personen wie Du benötigst mitbringen. Säuglinge oder Kleinkinder können beim Piercen leider nicht dabei sein.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Stecht ihr auch Ohrlöcher bei Kindern?</summary>
+        <p>Ja, das machen wir. Ohrlöcher gibt es bei uns ab 10 Jahren. Die Anforderungen hierzu sind identisch zum Piercen bei Personen unter 16 Jahren.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kann ich meinen eigenen Schmuck mitbringen?</summary>
+        <p>Nein, das geht bei uns nicht. Wir wollen das Piercen für Dich so sicher wie möglich gestalten. Darum nutzen wir ausschließlich neuen ungetragenen Schmuck. So stellen wir sicher, dass nur hochwertige und zugelassene Materialen mit Dir in Kontakt kommen und die Oberflächen des Schmucks noch vollkommen intakt sind.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet ein Piercing bei Euch?</summary>
+        <p>Unsere Preise kannst Du der Preisliste auf der Website entnehmen. Der dort angezeigte Preis beinhaltet einen hochwertigen Stecker aus Titan. Falls Du deinen Schmuck upgraden möchtest ist das gegen einen Aufpreis möglich. Wir beraten Dich dazu gerne vor Ort.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie kann ich bei Euch bezahlen?</summary>
+        <p>Du kannst bei uns mit allen gängigen Kredit und EC Karten, sowie Apple Pay, Google Pay, Samsung Pay oder Bar zahlen. Paypal oder Rechnungskauf bieten wir leider nicht an.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ist euer Studio behindertengerecht?</summary>
+        <p>Leider gibt es an unserem Eingang eine Stufe und auch unsere Waschräume sind nicht behindertengerecht. Wir versuchen aber alles für Dich möglich zu machen. Selbstverständlich helfen wir Dir, soweit es möglich ist, ins Studio und sorgen dafür, dass Du auch heil wieder raus kommst.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAS WIR UNS WÜNSCHEN ============ -->
+<section class="wishes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Was wir uns von Dir wünschen</h2>
+      <span class="sec-note">Vor, während, nach Deinem Termin</span>
+    </div>
+    <div class="wishes-grid">
+      <div class="wish-card reveal">
+        <span class="k">01</span>
+        <h3>Falls Du zu spät kommst</h3>
+        <p>Bitte gib uns Bescheid falls Du Dich verspäten solltest, auch wenn es nur 5 Minuten sind. Wir planen zwar ausreichend Zeit für unsere Termine ein, aber in der Regel haben wir nach Dir einen weiteren Termin den wir ungern warten lassen möchten. Bei größeren Verspätungen kann es sein, dass wir Dir einen neuen Termin anbieten müssen.</p>
+      </div>
+      <div class="wish-card reveal">
+        <span class="k">02</span>
+        <h3>Falls Du nicht kommen kannst oder möchtest</h3>
+        <p>Pläne ändern sich und das ist in Ordnung. Allerdings müssen auch wir planen. Aktuell nehmen wir für Piercing Termine keine Anzahlung und würden das auch sehr gerne so beibehalten. Darum bitten wir Dich respektvoll mit unserer Zeit umzugehen und rechtzeitig abzusagen, oder den Termin zu verschieben falls Dir etwas dazwischen gekommen ist, oder Du dich umentschieden hast.</p>
+      </div>
+      <div class="wish-card reveal">
+        <span class="k">03</span>
+        <h3>Wenn Du Dir bei uns ein Piercing stechen lässt</h3>
+        <p>Ein Piercing zu bekommen ist für die wenigsten Menschen alltäglich und kann in Deinem Körper Reaktionen hervorrufen. Um den Prozess für Dich so angenehm und sicher wie möglich zu machen, bitten wir Dich am Tag des Termins ausreichend zu essen und zu trinken. Wenn Du dich krank oder nicht fit fühlst, sollten wir Deinen Termin auf einen späteren Zeitpunkt verlegen.</p>
+      </div>
+      <div class="wish-card reveal">
+        <span class="k">04</span>
+        <h3>Nachdem Du ein Piercing von uns bekommen hast</h3>
+        <p>Um es Dir so einfach und entspannt wie möglich zu machen, bieten wir zu jedem Piercing Nachsorgen ohne festen Termin an. Wir bitten Dich diese auch wahrzunehmen. Selbst wenn sich Dein Piercing gut anfühlt, können wir Komplikationen in der Regel erkennen bevor Du sie wahrnimmst und direkt entgegenwirken. So können wir Dir helfen lange Freude mit deinem Piercing zu haben.</p>
+      </div>
+      <div class="wish-card reveal">
+        <span class="k">05</span>
+        <h3>Wenn Du uns helfen möchtest</h3>
+        <p>Wir sind ein kleines Unternehmen und Deine Rezension hilft uns dabei anderen zu zeigen was uns besonders macht. Wir wären Dir sehr dankbar dafür, wenn Du uns bei Google Bewerten könntest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="sage" id="kontakt">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:34px">
+        <h2>Besuch uns</h2>
+      </div>
+      <ul class="contact-list">
+        <li><span class="k">Adresse</span><a href="https://www.google.com/maps/dir/?api=1&destination=Hauptstra%C3%9Fe%20346a%2C%2051465%20Bergisch%20Gladbach" target="_blank" rel="noopener">Hauptstraße 346a, 51465 Bergisch Gladbach</a></li>
+        <li><span class="k">Telefon</span><a href="tel:+492202245577">0 22 02 – 24 55 77</a></li>
+        <li><span class="k">Termin</span><a href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Online-Terminbuchung</a> — Wir freuen uns über jeden Kunden, egal ob Walk-In oder Termin. Allerdings werden feste Termine immer bevorzugt.</li>
+      </ul>
+      <div style="margin-top:36px">
+        <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:34px">
+        <h2 style="font-size:clamp(24px,2.6vw,32px)">Öffnungszeiten</h2>
+      </div>
+      <table class="hours-table">
+        <tr><td>Montag – Freitag</td><td>12 – 19 Uhr</td></tr>
+        <tr><td>Samstag</td><td>12 – 16 Uhr</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 SkinWorks-Akademie</span>
+    <span>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://www.instagram.com/skinworks_akademie.b.gl" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/bergischgladbachtattoopiercing/?locale=de_DE" target="_blank" rel="noopener">Facebook</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

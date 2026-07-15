@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Galerie — Schlupfwarzenkorrektur — SkinWorks-Akademie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #10312F;
+    --teal:     #00747A;
+    --teal-dk:  #045459;
+    --paper:    #F6F3EC;
+    --sage:     #E4EAE3;
+    --brass:    #A97E3C;
+    --line:     rgba(16,49,47,.16);
+    --line-soft:rgba(16,49,47,.09);
+    --radius:   4px;
+    --max:      1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Wix Madefor Text',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--teal);color:var(--paper)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;color:var(--ink)}
+  .brand b{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-weight:700;font-size:20px;letter-spacing:.01em;color:var(--teal-dk);
+  }
+  .brand span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);opacity:.65;margin-top:2px;
+  }
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav a{
+    text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;
+    padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s;
+  }
+  nav a:hover,nav a:focus-visible{border-color:var(--teal)}
+  nav a.current{border-color:var(--teal)}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:15.5px;
+    padding:13px 26px;border-radius:999px;transition:transform .12s ease,background .15s;
+    border:1.5px solid var(--teal);
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-solid{background:var(--teal);color:#fff}
+  .btn-solid:hover{background:var(--teal-dk);border-color:var(--teal-dk)}
+  .btn-ghost{color:var(--teal-dk);background:transparent}
+  .btn-ghost:hover{background:rgba(0,116,122,.08)}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;border-radius:3px}
+
+  /* ---------- Seiten-Hero (schlicht) ---------- */
+  .page-hero{padding:56px 0 48px}
+  .back-link{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;
+    color:var(--teal-dk);text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    margin-bottom:22px;
+  }
+  .back-link:hover{text-decoration:underline}
+  h1{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-size:clamp(32px,4vw,46px);
+    font-weight:700;line-height:1.08;letter-spacing:-.015em;
+    margin-bottom:16px;
+  }
+  .page-hero p.note{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--brass);
+    background:rgba(169,126,60,.08);border:1px dashed rgba(169,126,60,.5);border-radius:4px;
+    padding:12px 16px;max-width:64ch;display:inline-block;
+  }
+
+  /* ---------- Galerie-Grid (Platzhalter) ---------- */
+  .gallery-section{padding-bottom:96px}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .photo-ph{
+    aspect-ratio:1/1;border-radius:var(--radius);
+    background:linear-gradient(160deg,rgba(0,116,122,.10),rgba(0,116,122,.03));
+    border:1.5px dashed rgba(0,116,122,.45);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+  }
+  .photo-ph .hint{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(16,49,47,.45);
+  }
+  .gallery-cta{margin-top:48px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:34px 0;background:var(--paper)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot,.foot a{font-size:14px;color:rgba(16,49,47,.65)}
+  .foot a{text-decoration:none;margin-left:22px}
+  .foot a:hover{color:var(--teal-dk);text-decoration:underline}
+
+  @media (max-width:980px){
+    nav ul{display:none}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .gallery-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <b>SkinWorks-Akademie</b>
+      <span>Praxis für Piercing · Tätowierungen</span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="piercing.html">Piercing</a></li>
+        <li><a href="taetowierungen.html">Tätowierungen</a></li>
+        <li><a href="schlupfwarzen.html" class="current">Schlupfwarzenkorrektur</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <a class="back-link" href="schlupfwarzen.html">&#8592; Zurück zur Schlupfwarzenkorrektur</a>
+    <h1>Galerie</h1>
+    <p class="note">[PLATZHALTER: optionaler Hinweistext, z. B. zur Art der Bilder — auf der Live-Site steht hier kein Text, nur die Überschrift „Galerie". Bitte ergänzen falls gewünscht.]</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="gallery-grid reveal">
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+      <div class="photo-ph"><span class="hint">Bild einsetzen</span></div>
+    </div>
+    <div class="gallery-cta">
+      <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen</a>
+      <a class="btn btn-ghost" href="tel:+492202245577">0 22 02 – 24 55 77</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 SkinWorks-Akademie</span>
+    <span>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://www.instagram.com/skinworks_akademie.b.gl" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/bergischgladbachtattoopiercing/?locale=de_DE" target="_blank" rel="noopener">Facebook</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
