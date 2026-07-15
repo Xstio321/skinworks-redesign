@@ -1,0 +1,18 @@
+# SkinWorks-Akademie
+
+> Praxis für Piercing & Tätowierungen in Bergisch Gladbach, Hauptstraße 346a, 51465 Bergisch Gladbach. Telefon 0 22 02 – 24 55 77. Öffnungszeiten: Montag–Freitag 12–19 Uhr, Samstag 12–16 Uhr.
+
+SkinWorks-Akademie ist ein Piercing- und Tattoo-Studio. Piercings werden von ausgebildeten Fachkräften für Piercing durchgeführt (Thomas, Basti, Martina), Tätowierungen von freiberuflich tätigen Tätowierenden (Holger, Katrina). Martina und Thomas sind zusätzlich auf Schlupfwarzenkorrektur mittels Piercing spezialisiert.
+
+## Seiten
+
+- [Startseite](https://www.skinworks-akademie-studio.de/): Überblick über alle Leistungen.
+- [Piercing](https://www.skinworks-akademie-studio.de/piercing.html): Piercing-Team, komplette Preisliste (Piercings, Intim Piercings, Schlupfwarzenkorrektur), FAQ.
+- [Tätowierungen](https://www.skinworks-akademie-studio.de/taetowierungen.html): Tattoo-Team, Hinweis zur Selbstständigkeit der Tätowierenden.
+- [Schlupfwarzenkorrektur](https://www.skinworks-akademie-studio.de/schlupfwarzen.html): Piercing als Alternative zur operativen Schlupfwarzenkorrektur.
+- [Impressum](https://www.skinworks-akademie-studio.de/impressum.html)
+- [Datenschutzerklärung](https://www.skinworks-akademie-studio.de/datenschutz.html)
+
+## Terminbuchung
+
+Online-Terminbuchung läuft extern über Shore: https://connect.shore.com/bookings/skinworks-akademie/services?locale=de. Für Tätowierungen sind Termine ausschließlich persönlich im Studio zu vereinbaren.

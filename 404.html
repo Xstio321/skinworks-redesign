@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seite nicht gefunden — SkinWorks-Akademie</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #10312F;
+    --teal:     #00747A;
+    --teal-dk:  #045459;
+    --paper:    #F6F3EC;
+    --brass:    #A97E3C;
+    --line:     rgba(16,49,47,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Wix Madefor Text',system-ui,sans-serif;
+    background:var(--paper);color:var(--ink);
+    min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    padding:28px;text-align:center;
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--teal-dk);display:flex;align-items:center;justify-content:center;gap:12px;
+    margin-bottom:26px;
+  }
+  .mono::before{content:"";width:34px;height:1.5px;background:var(--brass);display:inline-block}
+  h1{
+    font-family:'Wix Madefor Display',sans-serif;
+    font-size:clamp(48px,8vw,88px);font-weight:700;letter-spacing:-.02em;
+    margin-bottom:18px;color:var(--teal-dk);
+  }
+  p{font-size:17px;color:rgba(16,49,47,.75);max-width:46ch;margin:0 auto 32px}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:15.5px;
+    padding:13px 26px;border-radius:999px;border:1.5px solid var(--teal);
+    background:var(--teal);color:#fff;transition:background .15s;
+  }
+  .btn:hover{background:var(--teal-dk);border-color:var(--teal-dk)}
+</style>
+</head>
+<body>
+  <div>
+    <p class="mono">SkinWorks-Akademie</p>
+    <h1>404</h1>
+    <p>Diese Seite gibt es nicht (mehr). Vielleicht ist der Link veraltet oder falsch getippt.</p>
+    <a class="btn" href="index.html">Zur Startseite</a>
+  </div>
+</body>
+</html>
