@@ -314,6 +314,28 @@
     section{padding:64px 0}
     .faq-item summary{font-size:17px}
   }
+
+  /* ---------- Booking Modal (Shore iFrame) ---------- */
+  .booking-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+  .booking-modal[hidden]{display:none}
+  .booking-modal-backdrop{position:absolute;inset:0;background:rgba(16,49,47,.55)}
+  .booking-modal-panel{
+    position:relative;background:var(--paper);border-radius:12px;width:100%;max-width:720px;
+    height:min(88vh,900px);box-shadow:0 20px 60px rgba(16,49,47,.35);overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .booking-modal-head{display:flex;justify-content:flex-end;padding:8px 8px 0}
+  .booking-modal-close{
+    width:38px;height:38px;border-radius:50%;border:none;background:var(--sage);
+    color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+  .booking-modal-close:hover{background:var(--brass);color:#fff}
+  .booking-modal-panel iframe{flex:1;width:100%;border:0}
+
+  @media (max-width:600px){
+    .booking-modal{padding:0}
+    .booking-modal-panel{max-width:100%;width:100%;height:100vh;height:100dvh;border-radius:0}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -413,7 +435,7 @@
         <li><a href="schlupfwarzen.html">Schlupfwarzenkorrektur</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
-      <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+      <button type="button" class="btn btn-solid" data-open-booking>Termin buchen</button>
     </nav>
   </div>
 </header>
@@ -429,7 +451,7 @@
       <p class="lede">Sicheres und ästhetisches Piercen beginnt bei der richtigen Umgebung. In unserer Piercingpraxis verbinden wir hygienische Standards mit jahrzehntelanger Erfahrung, umfassender Beratung und einem verantwortungsvollen Umgang mit deinem Körper und deiner Persönlichkeit. Ein gutes Piercing braucht mehr als nur Technik – es braucht Fachwissen, Feingefühl und höchste Qualitätsansprüche an Materialien und Nachsorge.</p>
       <p class="sub">Wir bieten ein breites Spektrum an Körper- und Intimpiercings, inklusive Schlupfwarzenkorrekturen mittels einer speziellen Piercingtechnik. Alle Eingriffe werden von ausgebildeten Fachkräften für Piercing durchgeführt – individuell, ehrlich und professionell. Dabei stehen persönliche Betreuung, anatomische Machbarkeit und Deine gesundheitliche Sicherheit immer an erster Stelle.</p>
       <div class="hero-cta">
-        <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+        <button type="button" class="btn btn-solid" data-open-booking>Termin buchen</button>
         <a class="btn btn-outline btn-ghost" href="tel:+492202245577">0 22 02 – 24 55 77</a>
       </div>
     </div>
@@ -664,7 +686,7 @@
         <li><span class="k">Termin</span>Wir freuen uns über jeden Kunden, egal ob Walk-In oder Termin. Allerdings werden feste Termine immer bevorzugt.</li>
       </ul>
       <div style="margin-top:36px">
-        <a class="btn btn-solid" href="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" target="_blank" rel="noopener">Termin buchen<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+        <button type="button" class="btn btn-solid" data-open-booking>Termin buchen</button>
       </div>
     </div>
     <div class="reveal">
@@ -707,6 +729,42 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" hidden>
+  <div class="booking-modal-backdrop" data-close-booking></div>
+  <div class="booking-modal-panel">
+    <div class="booking-modal-head">
+      <button type="button" class="booking-modal-close" data-close-booking aria-label="Buchungsfenster schließen">&#10005;</button>
+    </div>
+    <h2 id="booking-modal-title" class="sr-only">Termin buchen</h2>
+    <iframe data-src="https://connect.shore.com/bookings/skinworks-akademie/services?locale=de" title="Online-Terminbuchung SkinWorks-Akademie"></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('booking-modal');
+  if (!modal) return;
+  const iframe = modal.querySelector('iframe');
+  let lastFocused = null;
+  function openModal(){
+    lastFocused = document.activeElement;
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.booking-modal-close').focus();
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  document.querySelectorAll('[data-open-booking]').forEach(function(btn){ btn.addEventListener('click', openModal); });
+  modal.querySelectorAll('[data-close-booking]').forEach(function(el){ el.addEventListener('click', closeModal); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
 </script>
 </body>
 </html>
