@@ -21,11 +21,49 @@
 <meta name="twitter:title" content="Datenschutzerklärung — SkinWorks-Akademie">
 <meta name="twitter:description" content="Datenschutzerklärung der SkinWorks-Akademie, Praxis für Piercing &amp; Tätowierungen in Bergisch Gladbach.">
 <meta name="twitter:image" content="https://www.skinworks-akademie-studio.de/assets/images/og-image.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="assets/fonts/wix-madefor-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/wix-madefor-text-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{
+    font-family:'Wix Madefor Display';font-style:normal;font-weight:400 800;font-display:swap;
+    src:url('assets/fonts/wix-madefor-display-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Wix Madefor Display';font-style:normal;font-weight:400 800;font-display:swap;
+    src:url('assets/fonts/wix-madefor-display-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Wix Madefor Text';font-style:normal;font-weight:400 800;font-display:swap;
+    src:url('assets/fonts/wix-madefor-text-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Wix Madefor Text';font-style:normal;font-weight:400 800;font-display:swap;
+    src:url('assets/fonts/wix-madefor-text-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+    src:url('assets/fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+    src:url('assets/fonts/ibm-plex-mono-400-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+    src:url('assets/fonts/ibm-plex-mono-500-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+    src:url('assets/fonts/ibm-plex-mono-500-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
   :root{
     --ink:      #10312F;
     --teal:     #00747A;
@@ -211,49 +249,51 @@
       <h2>Verantwortlicher</h2>
       <p>SkinWorks-Akademie<br><a href="https://www.google.com/maps/dir/?api=1&destination=Hauptstra%C3%9Fe%20346a%2C%2051465%20Bergisch%20Gladbach" target="_blank" rel="noopener">Hauptstraße 346a<br>51465 Bergisch Gladbach<span class="sr-only"> (öffnet in neuem Tab)</span></a></p>
       <p>Telefon: <a href="tel:+492202245577">0 22 02 – 24 55 77</a></p>
-      <p><span class="placeholder">[PLATZHALTER: E-Mail-Adresse des/der Verantwortlichen]</span></p>
+      <p>E-Mail: <a href="mailto:piercings@skinworks-akademie.de">piercings@skinworks-akademie.de</a></p>
     </div>
 
     <div class="legal-block">
       <h2>Hosting</h2>
-      <p>Diese Website wird bei Wix.com Ltd. gehostet.</p>
-      <p><span class="placeholder">[PLATZHALTER: Details zum Auftragsverarbeitungsvertrag mit Wix, Serverstandort, Rechtsgrundlage]</span></p>
+      <p>Diese Website wird bei Netlify, Inc. (San Francisco, USA) gehostet. Netlify verarbeitet dabei automatisch technische Zugriffsdaten, um die Website auszuliefern (siehe Abschnitt „Server-Log-Dateien"). Rechtsgrundlage ist unser berechtigtes Interesse an einer stabilen und sicheren Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p>Da Netlify, Inc. ein US-amerikanisches Unternehmen ist, kann es dabei zu einer Übermittlung personenbezogener Daten in die USA kommen. Netlify hat sich nach eigenen Angaben dem EU-U.S. Data Privacy Framework unterworfen und stützt die Datenübermittlung zusätzlich auf die Standardvertragsklauseln der EU-Kommission (Durchführungsbeschluss (EU) 2021/914). Der Auftragsverarbeitungsvertrag mit Netlify ist unter <a href="https://www.netlify.com/gdpr/" target="_blank" rel="noopener">netlify.com/gdpr<span class="sr-only"> (öffnet in neuem Tab)</span></a> abrufbar.</p>
     </div>
 
     <div class="legal-block">
       <h2>Terminbuchung über Shore</h2>
-      <p>Für die Online-Terminbuchung wird der Dienst der Shore GmbH eingebunden.</p>
-      <p><span class="placeholder">[PLATZHALTER: welche Daten dabei an Shore übermittelt werden, Rechtsgrundlage, Link zur Datenschutzerklärung von Shore]</span></p>
+      <p>Über den Button „Termin buchen" gelangst du auf die Online-Buchungsplattform der Shore GmbH. Die eigentliche Terminbuchung findet vollständig auf der Website von Shore statt – wir binden dabei kein Formular oder Widget von Shore auf unserer eigenen Seite ein, sondern verlinken lediglich dorthin. Erst wenn du dort ein Formular ausfüllst, verarbeitet Shore deine Daten in eigener Verantwortung.</p>
+      <p>Welche Daten Shore im Rahmen der Buchung verarbeitet und zu welchem Zweck, entnimmst du der Datenschutzerklärung von Shore: <a href="https://www.shore.com/de/legal/datenschutz" target="_blank" rel="noopener">shore.com/de/legal/datenschutz<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p>
     </div>
 
     <div class="legal-block">
       <h2>Erfassung allgemeiner Informationen (Server-Log-Dateien)</h2>
-      <p><span class="placeholder">[PLATZHALTER: Beschreibung der automatisch erfassten Zugriffsdaten, Zweck, Speicherdauer, Rechtsgrundlage]</span></p>
+      <p>Beim Aufruf dieser Website übermittelt dein Browser automatisch bestimmte Informationen an unseren Hosting-Anbieter, die in sogenannten Server-Log-Dateien gespeichert werden. Dazu gehören: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, verwendeter Browser und verwendetes Betriebssystem sowie die zuvor besuchte Seite (Referrer-URL).</p>
+      <p>Diese Daten dienen ausschließlich der technischen Auslieferung der Website, der Fehlererkennung und der Gewährleistung der Systemsicherheit. Eine Zusammenführung mit anderen Datenquellen oder eine Auswertung zu Marketingzwecken findet nicht statt. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und störungsfreien Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO). Die Speicherdauer richtet sich nach den Vorgaben unseres Hosting-Anbieters Netlify.</p>
     </div>
 
     <div class="legal-block">
       <h2>Cookies</h2>
-      <p><span class="placeholder">[PLATZHALTER: welche Cookies eingesetzt werden (technisch notwendig / Statistik / Marketing), Einwilligungs-Banner falls vorhanden]</span></p>
+      <p>Diese Website verwendet keine Cookies.</p>
     </div>
 
     <div class="legal-block">
       <h2>Kontaktaufnahme</h2>
-      <p><span class="placeholder">[PLATZHALTER: welche Daten bei Kontaktaufnahme per Telefon, E-Mail oder Terminbuchung verarbeitet werden]</span></p>
+      <p>Wenn du per Telefon oder E-Mail Kontakt zu uns aufnimmst, verarbeiten wir die von dir mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt deiner Anfrage) ausschließlich zur Bearbeitung deines Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern die Anfrage der Anbahnung oder Erfüllung eines Vertrags dient, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Deine Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
     </div>
 
     <div class="legal-block">
       <h2>Google Fonts</h2>
-      <p><span class="placeholder">[PLATZHALTER: Hinweis zur Einbindung von Google Fonts, ob lokal eingebunden oder von Google-Servern nachgeladen, Rechtsgrundlage]</span></p>
+      <p>Diese Website nutzt zur einheitlichen Darstellung von Schriftarten „Google Fonts". Die Schriftdateien sind lokal auf unserem eigenen Server eingebunden. Es findet dabei keine Verbindung zu Servern von Google statt, und es werden keine Daten an Google übermittelt.</p>
     </div>
 
     <div class="legal-block">
       <h2>Rechte der betroffenen Person</h2>
-      <p><span class="placeholder">[PLATZHALTER: Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch, Datenübertragbarkeit, Beschwerderecht bei einer Aufsichtsbehörde]</span></p>
+      <p>Dir stehen als betroffene Person nach der DSGVO folgende Rechte zu: Recht auf Auskunft (Art. 15 DSGVO), Recht auf Berichtigung (Art. 16 DSGVO), Recht auf Löschung (Art. 17 DSGVO), Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO), Recht auf Datenübertragbarkeit (Art. 20 DSGVO) sowie Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO).</p>
+      <p>Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen Daten zu beschweren (Art. 77 DSGVO). Zuständig ist die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen.</p>
     </div>
 
     <div class="legal-block">
       <h2>SSL-/TLS-Verschlüsselung</h2>
-      <p><span class="placeholder">[PLATZHALTER: Hinweis zur Verschlüsselung der Website-Verbindung]</span></p>
+      <p>Diese Website nutzt aus Sicherheitsgründen eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile deines Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in der Adresszeile.</p>
     </div>
 
   </div>
